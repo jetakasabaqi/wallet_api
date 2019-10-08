@@ -60,7 +60,7 @@ public class ExpenseService {
     public ExpenseDTO getMaximumExpense() {
 
         List<ExpenseDTO> expenses = expenseRepository.getDailyExpenses();
-        
+
         return expenses
                 .stream()
                 .max(Comparator.comparing(ExpenseDTO::getPrice)).get();
