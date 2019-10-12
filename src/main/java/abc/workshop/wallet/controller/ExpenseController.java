@@ -61,4 +61,9 @@ public class ExpenseController {
     public ExpenseDTO getMaximumExpense() {
         return expenseService.getMaximumExpense();
     }
+
+    @DeleteMapping("/{id}")
+    public void remove(@PathVariable int id) {
+        expenseService.deleteById(id);
+    }
 }
