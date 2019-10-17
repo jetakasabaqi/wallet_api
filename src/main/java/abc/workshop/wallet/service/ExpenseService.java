@@ -45,7 +45,7 @@ public class ExpenseService {
     }
 
     public List<Expense> findByDate(Date date) {
-        return expenseRepository.findAllByDate(date);
+        return expenseRepository.findAllByDateOrderById(date);
     }
 
     public double getDailyTotal(Date date) {

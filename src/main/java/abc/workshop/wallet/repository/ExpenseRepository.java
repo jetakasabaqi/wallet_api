@@ -13,7 +13,8 @@ import java.util.List;
 @Repository
 public interface ExpenseRepository extends JpaRepository<Expense, Integer> {
 
-    List<Expense> findAllByDate(Date date);
+
+    List<Expense> findAllByDateOrderById(Date date);
 
     @Query("SELECT sum(e.price) as Total FROM Expense e WHERE e.date=:date")
     double getDailyTotal(@Param("date") Date date);
